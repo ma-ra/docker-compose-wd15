@@ -45,4 +45,13 @@ services:
         volumes:
             - ./get-app-from-github.sh:/docker-entrypoint-init.d/get-app-from-github.sh
 
+    official-phpmyadmin:
+        container_name: official-phpmyadmin
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '8080:80'
+        links: 
+            - 'official-mariadb:db'
+        environment:
+            - MYSQL_ROOT_PASSWORD=root-database-password
 
