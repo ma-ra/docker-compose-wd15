@@ -1,5 +1,8 @@
 version: '2'
 
+# On windows first run: export COMPOSE_CONVERT_WINDOWS_PATHS=1
+# Create service fails when this variable is unset
+
 services:
     mara-www-store:
         container_name: mara-www-store
