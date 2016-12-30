@@ -9,6 +9,7 @@ services:
         image: centos:7 
         volumes:
             - /var/www/html
+            - /c/Users/marek/workspace/php-wd15:/var/www/html/wd15-test
         command: /bin/true
 
     official-mariadb:
@@ -47,6 +48,7 @@ services:
             - 'mara-www-store'
         volumes:
             - ./get-app-from-github.sh:/docker-entrypoint-init.d/get-app-from-github.sh
+            - ./configure-app-in-workspace.sh:/docker-entrypoint-reinit.d/configure-app-in-workspace.sh
 
     official-phpmyadmin:
         container_name: official-phpmyadmin
