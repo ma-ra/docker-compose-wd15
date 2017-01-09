@@ -24,6 +24,7 @@ services:
             - MYSQL_PASSWORD=wd15-database-password
         volumes:
             - ./startup-database.sql:/docker-entrypoint-initdb.d/startup-database.sql
+            - ./create-test-database.sql:/docker-entrypoint-initdb.d/create-test-database.sql
 
     mara-php-fpm:
         container_name: mara-php-fpm
